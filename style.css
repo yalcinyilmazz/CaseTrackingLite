@@ -1,0 +1,27 @@
+body{
+    background:#f8f9fa;
+}
+
+.badge-status{
+    padding:6px 10px;
+    border-radius:4px;
+    color:white;
+    font-size:12px;
+    font-weight:600;
+}
+
+.open{
+    background:#f0ad4e;
+}
+
+.inprogress{
+    background:#5bc0de;
+}
+
+.waiting{
+    background:#d9534f;
+}
+
+.completed{
+    background:#5cb85c;
+}
