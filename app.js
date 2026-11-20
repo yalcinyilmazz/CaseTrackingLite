@@ -51,6 +51,7 @@ window.onload = async function () {
 
 
 
+
 		
         await loadCasesFromDb();
 		
@@ -520,6 +521,9 @@ document.getElementById(
     document.getElementById(
         'appContainer'
     ).style.display = 'block';
+	
+	document.body.style.background =
+'linear-gradient(135deg, #1ba0e1 0%, #005cbf 35%, #003b82 100%)';
 
     await loadCasesFromDb();
 }
