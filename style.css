@@ -1,5 +1,21 @@
-body{
-    background:#f8f9fa;
+body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,70,140,0.65),
+            rgba(0,70,140,0.65)
+        ),
+        url('marport-background.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
 }
 
 .badge-status{
@@ -25,3 +41,463 @@ body{
 .completed{
     background:#5cb85c;
 }
+
+.top-header {
+
+    display:grid;
+
+    grid-template-columns: 300px 1fr 450px;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.logo {
+
+    height:95px;
+}
+
+.page-title {
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:48px;
+
+    font-weight:700;
+}
+
+.user-section {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:600;
+}
+
+.logo-section {
+
+    text-align:left;
+}
+
+.logo {
+
+    height:90px;
+}
+
+.title-section {
+
+    text-align:center;
+}
+
+.page-title {
+
+    margin:0;
+
+    font-size:54px;
+
+    font-weight:700;
+}
+
+.user-section {
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.main-card {
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+    width:100%;
+}
+
+.table {
+
+    margin-bottom: 0;
+}
+
+#currentUserName {
+
+    color:#003b82;
+
+    font-weight:600;
+}
+
+.title-section {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:90px;
+}
+
+
+.top-header {
+
+    background: white;
+
+    border-radius: 0 0 12px 12px;
+
+    padding: 15px 30px;
+
+    display: grid;
+
+    grid-template-columns: 300px 1fr 450px;
+
+    align-items: center;
+
+    margin: -16px -16px 25px -16px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.10);
+}
+.page-title {
+
+    color:#003b82;
+
+    margin-top:-5px;
+
+    margin-bottom:0;
+
+    font-size:45px;
+
+    font-weight:700;
+}
+
+
+table {
+
+    width: 100%;
+
+    table-layout: auto;
+}
+
+.col-id {
+    width: 70px;
+}
+
+.col-title {
+    width: 250px;
+}
+
+.col-description {
+    width: 600px;
+}
+
+.col-status {
+    white-space: nowrap;
+	width: 7%;
+}
+
+.col-assigned {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.col-lastchange {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.col-date {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.col-createdby {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.col-action {
+    white-space: nowrap;
+    width: 7%;
+}
+
+.description-cell {
+
+    min-width: 450px;
+
+    max-width: 700px;
+
+    word-break: break-word;
+}
+
+.table thead th {
+
+    background: linear-gradient(
+        to bottom,
+        #eaf5fd,
+        #d6ebfb
+    );
+
+    color: #003b82;
+
+    font-weight: 700;
+
+    border-color: #b8d9f3;
+}
+
+.table tbody tr:hover {
+
+    background-color: #eef7ff;
+
+    cursor: pointer;
+}
+
+.table tbody tr {
+
+    cursor:pointer;
+}
+
+.table tbody tr:hover {
+
+    background-color:#eef7ff;
+
+    transition:.15s;
+}
+
+.table tbody tr {
+
+    cursor: pointer;
+}
+
+.table tbody tr:hover {
+
+    background-color: #eef7ff !important;
+
+    transition: .15s ease;
+}
+
+.table tbody tr:hover td {
+
+    background-color: #d6ebfb !important;
+
+    cursor: pointer;
+
+    transition: all .15s ease;
+}
+
+.detail-value {
+
+    background: #f8f9fa;
+
+    border: 1px solid #dee2e6;
+
+    border-radius: 6px;
+
+    padding: 10px 12px;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+#detailDescription {
+
+    min-height: 140px;
+
+    align-items: flex-start;
+
+    white-space: pre-wrap;
+
+    padding-top: 12px;
+}
+
+.modal-body label {
+
+    color: #003b82;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.history-card {
+
+    border: 1px solid #d6e9f8;
+
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+    overflow: hidden;
+
+    background: white;
+}
+
+.history-date {
+
+    background: #eaf5fd;
+
+    color: #003b82;
+
+    font-weight: 700;
+
+    padding: 8px 12px;
+}
+
+.history-description {
+
+    background: #fffdf0;
+
+    border-top: 1px solid #d6e9f8;
+
+    padding: 10px 12px;
+}
+
+.history-description p {
+
+    margin: 0;
+
+    text-align: left !important;
+
+    line-height: 1.4;
+
+    color: #333;
+
+    white-space: pre-wrap;
+}
+
+.btn-excel {
+
+    background: #217346;
+
+    color: white;
+
+    border: none;
+
+    font-weight: 600;
+}
+
+.btn-excel:hover {
+
+    background: #185c37;
+
+    color: white;
+}
+
+
+#loginContainer .card-body {
+
+    padding: 30px 35px !important;
+}
+
+#loginContainer label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+    color: #003b82;
+}
+
+#loginContainer .mb-4 {
+
+    margin-bottom: 24px !important;
+}
+
+.login-header {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 15px 25px;
+
+    margin: 20px auto 25px auto;
+
+    width: 1600px;
+
+    max-width: 98%;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr 180px;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.10);
+}
+
+
+
+.login-title {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #003b82;
+}
+
+.login-logo-left {
+
+    text-align: left;
+}
+
+.login-logo-right {
+
+    text-align: right;
+}
+
+.login-logo {
+
+    height: 55px;
+}
+
+
+
+.powered-by {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #6c757d;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+#loginContainer .card {
+
+    max-width: 650px;
+
+    margin: 25px auto 0 auto;
+}
+
+
+
+
+

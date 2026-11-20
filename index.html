@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -12,46 +15,229 @@
 
 <body>
 
-<div class="container mt-4">
 
-    <h1 class="mb-4">Case List</h1>
 
-    <div class="mb-3">
-        <button class="btn btn-primary" onclick="showAddForm()">
-            + Yeni Case
-        </button>
+<div id="loginContainer" class="container mt-3">
+
+<div class="login-header">
+
+    <div class="login-logo-left">
+
+        <img src="marport-logo.png"
+             class="login-logo">
+
     </div>
 
+    <div class="login-title">
+
+        Case Tracking
+
+    </div>
+
+    <div class="login-logo-right">
+
+        <img src="arkas-logo.png"
+             class="login-logo">
+
+    </div>
+
+</div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+
+            <div class="card">
+
+                <div class="card-header text-center">
+
+                    <h4>Lütfen  giriş yapınız</h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+
+                        <label>Email</label>
+
+                        <input type="email"
+                               id="loginEmail"
+                               class="form-control"
+                               value="yalcin.yilmaz@marport.com.tr"
+                               readonly>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Password</label>
+
+                        <input type="password"
+                               id="loginPassword"
+                               class="form-control"
+                               onkeypress="if(event.key==='Enter') login()">
+
+                    </div>
+
+                    <button class="btn btn-primary w-100"
+                            onclick="login()">
+
+                        Giriş Yap
+
+                    </button>
+					
+					<div class="powered-by">
+
+    Powered By Liman Hesapları
+
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="container-fluid px-2 py-3"
+     id="appContainer"
+     style="display:none;">
+
+    <div class="top-header">
+
+        <div class="logo-section">
+
+            <img src="marport-logo.png"
+                 alt="Marport"
+                 class="logo">
+
+        </div>
+
+
+        <div class="title-section">
+
+            <h1 class="page-title">
+                Case List
+            </h1>
+
+        </div>
+
+        <div class="user-section">
+
+            <span id="currentUserName">
+                Kullanıcı
+            </span>
+
+            <button class="btn btn-warning btn-sm"
+                    onclick="changePassword()">
+                Şifre Değiştir
+            </button>
+
+            <button class="btn btn-danger btn-sm"
+                    onclick="logout()">
+                Çıkış Yap
+            </button>
+
+        </div>
+
+    </div>
+
+  <div class="main-card">
+
+<div class="row mb-3">
+
+    <div class="col-md-6">
+
+        <button class="btn btn-primary"
+                onclick="showAddForm()">
+            + Yeni Case
+        </button>
+
+    </div>
+
+    <div class="col-md-6 text-end">
+
+        <div class="form-check form-switch d-inline-block mb-2">
+
+            <input class="form-check-input"
+                   type="checkbox"
+                   id="showClosedCases"
+                   checked
+                   onchange="filterClosedCases()">
+
+            <label class="form-check-label"
+                   for="showClosedCases">
+
+                Kapanan ve Red Edilen Kayıtları Göster
+
+            </label>
+
+        </div>
+
+        <br>
+
+      <button class="btn btn-excel"
+        onclick="exportToExcel()">
+
+    ⇪ &nbsp; Excele Aktar
+
+</button>
+
+    </div>
+
+</div>
+
+
     <div class="row mb-3">
-        <div class="col-md-4">
+
+        <div class="col-md-3">
+
             <input
                 type="text"
-                id="searchInput"
+                id="searchInput" 
                 class="form-control"
                 placeholder="Ara..."
                 onkeyup="filterCases()">
+
         </div>
+
     </div>
 
     <table class="table table-bordered table-striped">
+
         <thead>
+
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Assigned</th>
-                <th>Date</th>
-                <th width="190">Action</th>
+
+				<th class="col-id">ID</th>
+				<th class="col-title">Title</th>
+				<th class="col-description">Description</th>
+				<th class="col-status">Status</th>
+				<th class="col-assigned">Assigned</th>
+				<th class="col-lastchange">Last Change</th>
+				<th class="col-date">Date</th>
+				<th class="col-createdby">Created By</th>
+				<th class="col-action">Action</th>
             </tr>
+
         </thead>
 
         <tbody id="caseTableBody">
-
         </tbody>
+
     </table>
 
 </div>
+
+</div>
+
 
 <!-- Modal -->
 
@@ -75,7 +261,10 @@
 
                 <div class="mb-3">
                     <label class="form-label">Description</label>
-                    <textarea id="description" class="form-control" rows="4"></textarea>
+                    <textarea id="description"
+          class="form-control"
+          rows="4"
+          ></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -110,13 +299,113 @@
 
         </div>
     </div>
+	
+	
 </div>
+
+
+<div class="modal fade"
+     id="detailModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title"
+					id="detailModalTitle">
+					Case Detail
+				</h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label><strong>Title</strong></label>
+                    <div id="detailTitle"
+     class="detail-value"></div>
+
+                </div>
+				
+				
+
+                <div class="mb-3">
+                    <label><strong>Description</strong></label>
+                    <div id="detailDescription"
+     class="detail-value"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label><strong>Status</strong></label>
+                    <div id="detailStatus"
+     class="detail-value"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label><strong>Assigned</strong></label>
+                    <div id="detailAssigned"
+     class="detail-value"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label><strong>Last Change</strong></label>
+                    <div id="detailChangeDate"
+     class="detail-value"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label><strong>Created By</strong></label>
+                    <div id="detailCreatedBy"
+     class="detail-value"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label><strong>Date</strong></label>
+                    <div id="detailDate"
+     class="detail-value"></div>
+                </div>
+				
+				<hr>
+
+<h5 class="mt-4 mb-3">
+    Version History
+</h5>
+
+<div id="historyContainer">
+
+    <div class="alert alert-light">
+
+        Bu kayıt için henüz geçmiş versiyon bulunmuyor.
+
+    </div>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 <script src="app.js"></script>
+
 
 </body>
 </html>
