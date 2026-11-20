@@ -131,10 +131,12 @@ if (
 
 
 const allowedUsers = [
-    "yalcin.yilmaz@marport.com.tr"
-    //"beyhan.yildirim@marport.com.tr",
-    //"ilayda.sariyar@marport.com.tr",
-    //"alper.suicmez@marport.com.tr"
+    "yalcin.yilmaz@marport.com.tr",
+    "beyhan.yildirim@marport.com.tr",
+	"mehmet.bayrakal@marport.com.tr",
+	"soner.oz@marport.com.tr",
+    "ilayda.sariyar@marport.com.tr",
+    "alper.suicmez@marport.com.tr"
 ];
 
 let currentUser = null;
